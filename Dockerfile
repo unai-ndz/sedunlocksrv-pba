@@ -60,4 +60,4 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 WORKDIR /tmp
 COPY . .
 
-CMD ./build.sh
+CMD ./build.sh --ssh --net-addressing=static --ip-addr=192.168.1.9 --netmask=255.255.255.0 --gateway=192.168.1.1 --dns=192.168.1.1 --expert-password='test'

@@ -1068,7 +1068,7 @@ func unlockDrivesWithPassword(password string) ([]UnlockResult, error) {
 		if !d.Locked {
 			continue
 		}
-		err1 := exec.Command("sedutil-cli", "--setlockingrange", "0", "rw", password, d.Device).Run()
+		err1 := exec.Command("sedutil-cli", "--setlockingrange", "1", "rw", password, d.Device).Run()
 		// Brief delay to let drive firmware settle between OPAL commands
 		time.Sleep(settleDelay(baseOpalInterCmdDelay))
 		err2 := exec.Command("sedutil-cli", "--setmbrdone", "on", password, d.Device).Run()

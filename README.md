@@ -2,6 +2,58 @@
 
 <img width="689" height="409" alt="Screenshot 2026-04-13 013516" src="https://github.com/user-attachments/assets/5beedb7e-19fc-44bc-9b00-050b85dc385d" />
 
+## TODO:
+Make it find the kernel on fedora server
+Im getting this: "Boot search exhausted with zero kernels"
+
+This is the drive:
+
+sde              0 238,5G                                     JMicron  SanDisk SD9SN8W-256G-1006
+├─sde1           0   600M vfat                    /mnt/1
+├─sde2           0     1G xfs                     /mnt/2
+└─sde3           0 236,9G LVM2_member
+  └─fedora-root  0    15G xfs
+
+/dev/sde1
+└── EFI
+    ├── BOOT
+    │   ├── BOOTX64.EFI
+    │   └── fbx64.efi
+    └── fedora
+        ├── BOOTX64.CSV
+        ├── grub.cfg
+        ├── grubx64.efi
+        ├── mmx64.efi
+        ├── shim.efi
+        └── shimx64.efi
+
+/dev/sde2
+├── config-7.0.0-0.rc6.49.fc45.x86_64
+├── config-7.2.7-100.fc43.x86_64
+├── config-7.2.7-200.fc44.x86_64
+├── efi
+├── grub2  [error opening dir]
+├── initramfs-0-rescue-55d584c6fa1046eda10952114f57f980.img
+├── initramfs-7.0.0-0.rc6.49.fc45.x86_64.img
+├── initramfs-7.2.7-100.fc43.x86_64.img
+├── initramfs-7.2.7-200.fc44.x86_64.img
+├── loader
+│   └── entries  [error opening dir]
+├── symvers-7.0.0-0.rc6.49.fc45.x86_64.xz
+├── symvers-7.2.7-100.fc43.x86_64.xz -> /lib/modules/7.2.7-100.fc43.x86_64/symvers.xz
+├── symvers-7.2.7-200.fc44.x86_64.xz -> /lib/modules/7.2.7-200.fc44.x86_64/symvers.xz
+├── System.map-7.0.0-0.rc6.49.fc45.x86_64
+├── System.map-7.2.7-100.fc43.x86_64
+├── System.map-7.2.7-200.fc44.x86_64
+├── vmlinuz-0-rescue-55d584c6fa1046eda10952114f57f980
+├── vmlinuz-7.0.0-0.rc6.49.fc45.x86_64
+├── vmlinuz-7.2.7-100.fc43.x86_64
+└── vmlinuz-7.2.7-200.fc44.x86_64
+
+Tried this with no effect:
+EXTENSIONS="jq.tcz lvm2.tcz coreutils.tcz xfsprogs.tcz"
+
+
 Prior to unlcoking a drive
 
 
